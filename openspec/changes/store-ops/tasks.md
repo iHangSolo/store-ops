@@ -8,7 +8,7 @@
 - [x] 1.4 初始化 Wails 客户端项目 (client/wails.json, go.mod)
 - [x] 1.5 创建 Docker 编排文件 (docker-compose.yml, Dockerfile.server, Dockerfile.web)
 - [x] 1.6 创建构建脚本 (scripts/build.sh, scripts/deploy.sh)
-- [ ] 1.7 创建 GitHub 仓库并推送代码
+- [x] 1.7 创建 GitHub 仓库并推送代码
 
 ## 2. CI/CD 配置 (GitHub Actions)
 
