@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "lsp": {
+      "command": "lsp-mcp-server"
+    },
+    "repomix": {
+      "command": "node",
+      "args": ["/home/claw/.openclaw/mcp-servers/repomix-mcp/dist/index.js"]
+    }
+  }
+}

@@ -1,0 +1,101 @@
+version: '3.8'
+
+services:
+  # PostgreSQL 数据库
+  postgres:
+    image: postgres:15-alpine
+    container_name: store-ops-db
+    environment:
+      POSTGRES_USER: storeops
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-storeops123}
+      POSTGRES_DB: store_ops
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./server/migrations:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U storeops -d store_ops"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - store-ops-network
+
+  # Go 后端服务
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: store-ops-server
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=storeops
+      - DB_PASSWORD=${DB_PASSWORD:-storeops123}
+      - DB_NAME=store_ops
+      - JWT_SECRET=${JWT_SECRET:-your_jwt_secret}
+      - SERVER_PORT=8080
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - store-ops-network
+    restart: unless-stopped
+
+  # Web 前端 (Nginx)
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: store-ops-web
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - server
+    networks:
+      - store-ops-network
+    restart: unless-stopped
+
+  # RustDesk ID 服务器
+  rustdesk-hbbs:
+    image: rustdesk/rustdesk-server:latest
+    container_name: store-ops-rustdesk-hbbs
+    command: hbbs
+    ports:
+      - "21115:21115"
+      - "21116:21116"
+      - "21116:21116/udp"
+    volumes:
+      - rustdesk_data:/root
+    networks:
+      - store-ops-network
+    restart: unless-stopped
+
+  # RustDesk 中继服务器
+  rustdesk-hbbr:
+    image: rustdesk/rustdesk-server:latest
+    container_name: store-ops-rustdesk-hbbr
+    command: hbbr
+    ports:
+      - "21117:21117"
+      - "21119:21119"
+    volumes:
+      - rustdesk_data:/root
+    networks:
+      - store-ops-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  rustdesk_data:
+
+networks:
+  store-ops-network:
+    driver: bridge
