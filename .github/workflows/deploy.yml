@@ -1,0 +1,54 @@
+name: CD
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: '部署环境'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
+
+jobs:
+  deploy:
+    name: 部署到服务器
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      - name: 部署到服务器
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            echo "开始部署 store-ops..."
+
+            # 进入项目目录
+            cd /opt/store-ops
+
+            # 拉取最新代码
+            git pull origin main
+
+            # 拉取最新镜像
+            docker-compose pull
+
+            # 重启服务
+            docker-compose up -d
+
+            # 清理旧镜像
+            docker image prune -f
+
+            echo "部署完成！"
+
+            # 显示服务状态
+            docker-compose ps
