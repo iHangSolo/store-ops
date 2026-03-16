@@ -30,6 +30,7 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_KEY }}
+          port: 5522
           script: |
             echo "开始部署 store-ops..."
 
