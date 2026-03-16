@@ -20,7 +20,7 @@
 - [x] 2.6 配置 Windows 客户端构建任务 (wails build, 仅 tag 触发)
 - [x] 2.7 创建 CD 部署工作流 (.github/workflows/deploy.yml)
 - [x] 2.8 配置 SSH 部署到服务器 (appleboy/ssh-action)
-- [ ] 2.9 在 GitHub 仓库配置 Secrets (SERVER_HOST, SERVER_USER, SSH_KEY)
+- [x] 2.9 在 GitHub 仓库配置 Secrets (SERVER_HOST, SERVER_USER, SSH_KEY)
 - [ ] 2.10 测试 CI 流程（提交代码验证自动测试）
 - [ ] 2.11 测试 CD 流程（验证自动部署到本机）
 - [ ] 2.12 测试客户端构建流程（创建 tag 验证 .exe 生成）
