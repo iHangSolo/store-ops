@@ -36,69 +36,69 @@
 
 ## 4. 数据库设计与迁移
 
-- [ ] 4.1 创建数据库迁移脚本 (migrations/001_init.up.sql)
-- [ ] 4.2 创建回滚脚本 (migrations/001_init.down.sql)
-- [ ] 4.3 创建数据库连接模块 (internal/pkg/database/)
+- [x] 4.1 创建数据库迁移脚本 (migrations/001_init.up.sql)
+- [x] 4.2 创建回滚脚本 (migrations/001_init.down.sql)
+- [x] 4.3 创建数据库连接模块 (internal/pkg/database/)
 - [ ] 4.4 初始化默认管理员账户
 
 ## 5. 服务端 - 基础架构
 
-- [ ] 5.1 实现配置管理模块 (internal/config/)
-- [ ] 5.2 实现日志模块 (pkg/logger/)
-- [ ] 5.3 实现统一响应格式 (internal/pkg/response/)
-- [ ] 5.4 实现加密工具 (internal/pkg/crypto/)
-- [ ] 5.5 实现 JWT 认证中间件 (internal/middleware/auth.go)
-- [ ] 5.6 实现 CORS 中间件 (internal/middleware/cors.go)
-- [ ] 5.7 实现请求日志中间件 (internal/middleware/logger.go)
+- [x] 5.1 实现配置管理模块 (internal/config/)
+- [x] 5.2 实现日志模块 (pkg/logger/)
+- [x] 5.3 实现统一响应格式 (internal/pkg/response/)
+- [x] 5.4 实现加密工具 (internal/pkg/crypto/)
+- [x] 5.5 实现 JWT 认证中间件 (internal/middleware/auth.go)
+- [x] 5.6 实现 CORS 中间件 (internal/middleware/cors.go)
+- [x] 5.7 实现请求日志中间件 (internal/middleware/logger.go)
 
 ## 6. 服务端 - 数据模型与仓库
 
-- [ ] 6.1 创建 Admin 模型和仓库 (internal/model/admin.go, internal/repository/admin_repo.go)
-- [ ] 6.2 创建 Store 模型和仓库 (internal/model/store.go, internal/repository/store_repo.go)
-- [ ] 6.3 创建 AuditLog 模型和仓库 (internal/model/audit_log.go, internal/repository/audit_log_repo.go)
-- [ ] 6.4 创建 CommandLog 模型和仓库 (internal/model/command_log.go, internal/repository/command_log_repo.go)
-- [ ] 6.5 创建 SoftwareTask 模型和仓库 (internal/model/software_task.go, internal/repository/software_task_repo.go)
-- [ ] 6.6 创建 DesktopSession 模型和仓库 (internal/model/desktop_session.go, internal/repository/desktop_session_repo.go)
-- [ ] 6.7 创建 ResourceHistory 模型和仓库 (internal/model/resource_history.go, internal/repository/resource_history_repo.go)
-- [ ] 6.8 创建 DesktopQueue 模型和仓库
+- [x] 6.1 创建 Admin 模型和仓库 (internal/model/admin.go, internal/repository/admin_repo.go)
+- [x] 6.2 创建 Store 模型和仓库 (internal/model/store.go, internal/repository/store_repo.go)
+- [x] 6.3 创建 AuditLog 模型和仓库 (internal/model/audit_log.go, internal/repository/audit_log_repo.go)
+- [x] 6.4 创建 CommandLog 模型和仓库 (internal/model/command_log.go, internal/repository/command_log_repo.go)
+- [x] 6.5 创建 SoftwareTask 模型和仓库 (internal/model/software_task.go, internal/repository/software_task_repo.go)
+- [x] 6.6 创建 DesktopSession 模型和仓库 (internal/model/desktop_session.go, internal/repository/desktop_session_repo.go)
+- [x] 6.7 创建 ResourceHistory 模型和仓库 (internal/model/resource_history.go, internal/repository/resource_history_repo.go)
+- [x] 6.8 创建 DesktopQueue 模型和仓库
 
 ## 7. 服务端 - WebSocket 网关
 
-- [ ] 7.1 实现 WebSocket Hub 连接管理器 (internal/ws/hub.go)
-- [ ] 7.2 实现 WebSocket 客户端连接 (internal/ws/client.go)
-- [ ] 7.3 定义 WebSocket 消息类型 (internal/ws/message.go)
-- [ ] 7.4 实现 WebSocket 消息处理器 (internal/ws/handler.go)
-- [ ] 7.5 实现 TOKEN 认证逻辑
-- [ ] 7.6 实现设备指纹校验
-- [ ] 7.7 实现心跳检测机制
+- [x] 7.1 实现 WebSocket Hub 连接管理器 (internal/ws/hub.go)
+- [x] 7.2 实现 WebSocket 客户端连接 (internal/ws/hub.go - Client struct)
+- [x] 7.3 定义 WebSocket 消息类型 (internal/ws/message.go)
+- [x] 7.4 实现 WebSocket 消息处理器 (internal/ws/handler.go)
+- [x] 7.5 实现 TOKEN 认证逻辑 (internal/ws/handler.go)
+- [x] 7.6 实现设备指纹校验 (internal/ws/handler.go)
+- [x] 7.7 实现心跳检测机制 (internal/ws/handler.go - handlePing)
 
 ## 8. 服务端 - 业务服务
 
-- [ ] 8.1 实现认证服务 (internal/service/auth_service.go)
-- [ ] 8.2 实现门店管理服务 (internal/service/store_service.go)
-- [ ] 8.3 实现远程桌面服务 (internal/service/desktop_service.go)
-- [ ] 8.4 实现命令执行服务 (internal/service/command_service.go)
-- [ ] 8.5 实现软件推送服务 (internal/service/software_service.go)
-- [ ] 8.6 实现进程监控服务 (internal/service/process_service.go)
-- [ ] 8.7 实现资源监控服务 (internal/service/resource_service.go)
-- [ ] 8.8 实现审计日志服务 (internal/service/audit_service.go)
+- [x] 8.1 实现认证服务 (internal/service/auth_service.go)
+- [x] 8.2 实现门店管理服务 (internal/service/store_service.go)
+- [x] 8.3 实现远程桌面服务 (internal/service/desktop_service.go)
+- [x] 8.4 实现命令执行服务 (internal/service/command_service.go)
+- [x] 8.5 实现软件推送服务 (internal/service/software_service.go)
+- [x] 8.6 实现进程监控服务 (internal/service/process_service.go)
+- [x] 8.7 实现资源监控服务 (internal/service/resource_service.go)
+- [x] 8.8 实现审计日志服务 (internal/service/audit_service.go)
 
 ## 9. 服务端 - HTTP 处理器
 
-- [ ] 9.1 实现认证处理器 (internal/handler/auth.go) - POST /auth/login, POST /auth/logout
-- [ ] 9.2 实现门店管理处理器 (internal/handler/store.go) - GET/POST/DELETE /stores
-- [ ] 9.3 实现远程桌面处理器 (internal/handler/desktop.go) - 连接状态、排队
-- [ ] 9.4 实现命令执行处理器 (internal/handler/command.go) - 执行命令、获取结果
-- [ ] 9.5 实现软件推送处理器 (internal/handler/software.go) - 推送安装、查询状态
-- [ ] 9.6 实现进程监控处理器 (internal/handler/process.go) - 进程列表、终止进程、服务管理
-- [ ] 9.7 实现资源监控处理器 (internal/handler/resource.go) - 当前资源、历史数据
-- [ ] 9.8 实现审计日志处理器 (internal/handler/audit.go) - 日志列表、详情
+- [x] 9.1 实现认证处理器 (internal/handler/auth.go) - POST /auth/login, POST /auth/logout
+- [x] 9.2 实现门店管理处理器 (internal/handler/store.go) - GET/POST/DELETE /stores
+- [x] 9.3 实现远程桌面处理器 (internal/handler/desktop.go) - 连接状态、排队
+- [x] 9.4 实现命令执行处理器 (internal/handler/command.go) - 执行命令、获取结果
+- [x] 9.5 实现软件推送处理器 (internal/handler/software.go) - 推送安装、查询状态
+- [x] 9.6 实现进程监控处理器 (internal/handler/process.go) - 进程列表、终止进程、服务管理
+- [x] 9.7 实现资源监控处理器 (internal/handler/resource.go) - 当前资源、历史数据
+- [x] 9.8 实现审计日志处理器 (internal/handler/audit.go) - 日志列表、详情
 
 ## 10. 服务端 - 路由与启动
 
-- [ ] 10.1 配置 HTTP 路由 (cmd/server/main.go)
-- [ ] 10.2 配置 WebSocket 路由
-- [ ] 10.3 实现优雅关闭
+- [x] 10.1 配置 HTTP 路由 (cmd/server/main.go)
+- [x] 10.2 配置 WebSocket 路由
+- [x] 10.3 实现优雅关闭
 - [ ] 10.4 集成所有模块并测试启动
 
 ## 11. 服务端 - 单元测试
