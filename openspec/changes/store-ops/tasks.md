@@ -159,21 +159,21 @@
 
 ## 17. 门店客户端 - 基础架构
 
-- [ ] 17.1 初始化 Wails 项目结构
-- [ ] 17.2 实现配置管理 (internal/config/)
+- [x] 17.1 初始化 Wails 项目结构
+- [x] 17.2 实现配置管理 (internal/config/)
 - [ ] 17.3 实现 SQLite 本地存储 (internal/storage/sqlite.go)
-- [ ] 17.4 实现设备 ID 生成 (internal/device/id.go)
-- [ ] 17.5 实现设备指纹采集 (internal/device/fingerprint.go)
+- [x] 17.4 实现设备 ID 生成 (internal/device/id.go)
+- [x] 17.5 实现设备指纹采集 (internal/device/fingerprint.go)
 - [ ] 17.6 实现开机自启功能 (internal/autostart/windows.go)
 - [ ] 17.7 实现崩溃自动重启
 
 ## 18. 门店客户端 - WebSocket 连接
 
-- [ ] 18.1 实现 WebSocket 客户端 (internal/connection/client.go)
+- [x] 18.1 实现 WebSocket 客户端 (internal/connection/client.go)
 - [ ] 18.2 实现断线重连机制 (internal/connection/reconnect.go)
-- [ ] 18.3 实现心跳发送 (internal/connection/heartbeat.go)
+- [x] 18.3 实现心跳发送 (internal/connection/client.go)
 - [ ] 18.4 实现消息收发处理
-- [ ] 18.5 实现注册/认证流程
+- [x] 18.5 实现注册/认证流程
 
 ## 19. 门店客户端 - 功能模块
 
@@ -185,10 +185,10 @@
 - [ ] 19.6 实现进程终止功能 (internal/process/kill.go)
 - [ ] 19.7 实现服务列表获取 (internal/service/list.go)
 - [ ] 19.8 实现服务控制功能 (internal/service/control.go)
-- [ ] 19.9 实现 CPU 数据采集 (internal/resource/cpu.go)
-- [ ] 19.10 实现内存数据采集 (internal/resource/memory.go)
-- [ ] 19.11 实现磁盘数据采集 (internal/resource/disk.go)
-- [ ] 19.12 实现资源定时上报
+- [x] 19.9 实现 CPU 数据采集 (internal/resource/collector.go)
+- [x] 19.10 实现内存数据采集 (internal/resource/collector.go)
+- [x] 19.11 实现磁盘数据采集 (internal/resource/collector.go)
+- [x] 19.12 实现资源定时上报 (internal/connection/client.go)
 
 ## 20. 门店客户端 - RustDesk 集成
 
