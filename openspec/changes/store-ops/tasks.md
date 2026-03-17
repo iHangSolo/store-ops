@@ -122,40 +122,40 @@
 
 ## 13. Web 前端 - 基础架构
 
-- [ ] 13.1 配置路由 (src/router/index.ts)
-- [ ] 13.2 配置 Pinia 状态管理 (src/stores/)
-- [ ] 13.3 配置 Axios 请求封装 (src/utils/request.ts)
-- [ ] 13.4 实现布局组件 (src/components/Layout/)
-- [ ] 13.5 配置 Element Plus 主题
-- [ ] 13.6 实现登录页面 (src/views/login/)
+- [x] 13.1 配置路由 (src/router/index.ts)
+- [x] 13.2 配置 Pinia 状态管理 (src/stores/)
+- [x] 13.3 配置 Axios 请求封装 (src/utils/request.ts)
+- [x] 13.4 实现布局组件 (src/components/Layout/)
+- [x] 13.5 配置 Element Plus 主题
+- [x] 13.6 实现登录页面 (src/views/login/)
 
 ## 14. Web 前端 - API 封装
 
-- [ ] 14.1 实现认证 API (src/api/auth.ts)
-- [ ] 14.2 实现门店管理 API (src/api/store.ts)
-- [ ] 14.3 实现远程桌面 API (src/api/desktop.ts)
-- [ ] 14.4 实现命令执行 API (src/api/command.ts)
-- [ ] 14.5 实现软件推送 API (src/api/software.ts)
-- [ ] 14.6 实现进程监控 API (src/api/process.ts)
-- [ ] 14.7 实现资源监控 API (src/api/resource.ts)
-- [ ] 14.8 实现审计日志 API (src/api/audit.ts)
+- [x] 14.1 实现认证 API (src/api/auth.ts)
+- [x] 14.2 实现门店管理 API (src/api/store.ts)
+- [x] 14.3 实现远程桌面 API (src/api/desktop.ts)
+- [x] 14.4 实现命令执行 API (src/api/command.ts)
+- [x] 14.5 实现软件推送 API (src/api/software.ts)
+- [x] 14.6 实现进程监控 API (src/api/process.ts)
+- [x] 14.7 实现资源监控 API (src/api/resource.ts)
+- [x] 14.8 实现审计日志 API (src/api/audit.ts)
 
 ## 15. Web 前端 - 页面开发
 
-- [ ] 15.1 实现仪表盘页面 (src/views/dashboard/) - 概览统计
-- [ ] 15.2 实现门店列表页面 (src/views/stores/) - 列表、审批、状态
-- [ ] 15.3 实现远程桌面页面 (src/views/desktop/) - 连接、排队
-- [ ] 15.4 实现命令执行页面 (src/views/command/) - 执行、结果展示
-- [ ] 15.5 实现软件推送页面 (src/views/software/) - 上传、进度
-- [ ] 15.6 实现进程监控页面 (src/views/process/) - 进程列表、服务列表
-- [ ] 15.7 实现资源监控页面 (src/views/resource/) - 实时数据、图表
-- [ ] 15.8 实现审计日志页面 (src/views/audit/) - 日志列表、筛选
+- [x] 15.1 实现仪表盘页面 (src/views/dashboard/) - 概览统计
+- [x] 15.2 实现门店列表页面 (src/views/stores/) - 列表、审批、状态
+- [x] 15.3 实现远程桌面页面 (src/views/desktop/) - 连接、排队
+- [x] 15.4 实现命令执行页面 (src/views/command/) - 执行、结果展示
+- [x] 15.5 实现软件推送页面 (src/views/software/) - 上传、进度
+- [x] 15.6 实现进程监控页面 (src/views/process/) - 进程列表、服务列表
+- [x] 15.7 实现资源监控页面 (src/views/resource/) - 实时数据、图表
+- [x] 15.8 实现审计日志页面 (src/views/audit/) - 日志列表、筛选
 
 ## 16. Web 前端 - 通用组件
 
-- [ ] 16.1 实现门店状态组件 (src/components/StoreStatus/)
-- [ ] 16.2 实现命令对话框组件 (src/components/CommandDialog/)
-- [ ] 16.3 实现资源图表组件 (src/components/ResourceChart/)
+- [x] 16.1 实现门店状态组件 (src/components/Layout/index.vue - 菜单集成)
+- [x] 16.2 实现命令对话框组件 (src/views/command/index.vue)
+- [x] 16.3 实现资源图表组件 (src/views/resource/index.vue)
 
 ## 17. 门店客户端 - 基础架构
 

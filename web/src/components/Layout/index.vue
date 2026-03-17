@@ -15,12 +15,16 @@
         <el-menu-item index="/stores">
           <span>门店管理</span>
         </el-menu-item>
+        <el-menu-item index="/audit-logs">
+          <span>审计日志</span>
+        </el-menu-item>
       </el-menu>
     </el-aside>
     <el-container>
       <el-header>
         <div class="header-right">
-          <span>管理员</span>
+          <span class="username">{{ authStore.adminInfo?.nickname || authStore.adminInfo?.username }}</span>
+          <el-button type="text" @click="handleLogout">退出</el-button>
         </div>
       </el-header>
       <el-main>
@@ -32,10 +36,19 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
 
 const route = useRoute()
+const router = useRouter()
+const authStore = useAuthStore()
+
 const activeMenu = computed(() => route.path)
+
+async function handleLogout() {
+  await authStore.logout()
+  router.push('/login')
+}
 </script>
 
 <style scoped>
@@ -69,6 +82,11 @@ const activeMenu = computed(() => route.path)
 .header-right {
   display: flex;
   align-items: center;
+  gap: 16px;
+}
+
+.username {
+  color: #606266;
 }
 
 .el-main {
